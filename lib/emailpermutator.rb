@@ -53,6 +53,8 @@ class EmailPermutator
     itememails = Array.new
     fn = name[0]
     ln = name[1]
+    fi = name[0][0]
+    li = name[1][0]
 
     # Generate emails                                                                                                     
     itememails.push(fn + "@" + domain)
@@ -73,12 +75,6 @@ class EmailPermutator
     itememails.push(li + "." + fn + "@" + domain)
     itememails.push(li + fi + "@" + domain)
     itememails.push(li + "." + fi + "@" + domain)
-    itememails.push(fi + mi + ln + "@" + domain)
-    itememails.push(fi + mi + "." + ln + "@" + domain)
-    itememails.push(fn + mi + ln + "@" + domain)
-    itememails.push(fn + "." + mi + "." + ln + "@" + domain)
-    itememails.push(fn + mn + ln + "@" + domain)
-    itememails.push(fn + "." + mn + "." + ln + "@" + domain)
     itememails.push(fn + "-" + ln + "@" + domain)
     itememails.push(fi + "-" + ln + "@" + domain)
     itememails.push(fn + "-" + li + "@" + domain)
@@ -87,9 +83,6 @@ class EmailPermutator
     itememails.push(ln + "-" + fi + "@" + domain)
     itememails.push(li + "-" + fn + "@" + domain)
     itememails.push(li + "-" + fi + "@" + domain)
-    itememails.push(fi + mi + "-" + ln + "@" + domain)
-    itememails.push(fn + "-" + mi + "-" + ln + "@" + domain)
-    itememails.push(fn + "-" + mn + "-" + ln + "@" + domain)
     itememails.push(fn + "_" + ln + "@" + domain)
     itememails.push(fi + "_" + ln + "@" + domain)
     itememails.push(fn + "_" + li + "@" + domain)
@@ -98,9 +91,20 @@ class EmailPermutator
     itememails.push(ln + "_" + fi + "@" + domain)
     itememails.push(li + "_" + fn + "@" + domain)
     itememails.push(li + "_" + fi + "@" + domain)
-    itememails.push(fi + mi + "_" + ln + "@" + domain)
-    itememails.push(fn + "_" + mi + "_" + ln + "@" + domain)
-    itememails.push(fn + "_" + mn + "_" + ln + "@" + domain)
+
+    # To-Do For adding middle name
+    # itememails.push(fi + mi + ln + "@" + domain)
+    # itememails.push(fi + mi + "." + ln + "@" + domain)
+    # itememails.push(fn + mi + ln + "@" + domain)
+    # itememails.push(fn + "." + mi + "." + ln + "@" + domain)
+    # itememails.push(fn + mn + ln + "@" + domain)
+    # itememails.push(fn + "." + mn + "." + ln + "@" + domain)
+    # itememails.push(fi + mi + "-" + ln + "@" + domain)
+    # itememails.push(fn + "-" + mi + "-" + ln + "@" + domain)
+    # itememails.push(fn + "-" + mn + "-" + ln + "@" + domain)
+    # itememails.push(fi + mi + "_" + ln + "@" + domain)
+    # itememails.push(fn + "_" + mi + "_" + ln + "@" + domain)
+    # itememails.push(fn + "_" + mn + "_" + ln + "@" + domain)
     itememails.each do |e|
       @emaillist.push(e)
     end
