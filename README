@@ -1,0 +1,70 @@
+#### EmailPermutator is a simple solution to generate following email combinations from given First Name + Last Name + Domain
+
+{fn}
+{ln}
+{fn}{ln}
+{fn}.{ln}
+{fi}{ln}
+{fi}.{ln}
+{fn}{li}
+{fn}.{li}
+{fi}{li}
+{fi}.{li}
+{ln}{fn}
+{ln}.{fn}
+{ln}{fi}
+{ln}.{fi}
+{li}{fn}
+{li}.{fn}
+{li}{fi}
+{li}.{fi}
+{fi}{mi}{ln}
+{fi}{mi}.{ln}
+{fn}{mi}{ln}
+{fn}.{mi}.{ln}
+{fn}{mn}{ln}
+{fn}.{mn}.{ln}
+{fn}-{ln}
+{fi}-{ln}
+{fn}-{li}
+{fi}-{li}
+{ln}-{fn}
+{ln}-{fi}
+{li}-{fn}
+{li}-{fi}
+{fi}{mi}-{ln}
+{fn}-{mi}-{ln}
+{fn}-{mn}-{ln}
+{fn}_{ln}
+{fi}_{ln}
+{fn}_{li}
+{fi}_{li}
+{ln}_{fn}
+{ln}_{fi}
+{li}_{fn}
+{li}_{fi}
+{fi}{mi}_{ln}
+{fn}_{mi}_{ln}
+{fn}_{mn}_{ln}
+
+## Usage
+
+This takes a JSON with a name and optionally domain and returns potentially functional emails. 
+To use, download the emailpermutator gem then-
+
+To use a domain in the JSON to get all email combinations:
+n = EmailPermutator.new(JSON, "name field", false, nil, "domain field", "all")
+n.genemails
+
+To use a domain of your choice to get all email combinations:
+n = EmailPermutator.new(JSON, "name field", true, "domainofyourchoice.com", nil, "all")
+n.genemails
+
+Output formats:
+n.jsonwithemails to get a json with the emails appended to each item
+n.emaillist to get just the emails
+
+
+## Credits
+
+Heavily inspired and crafted from this [post](https://www.distilled.net/blog/miscellaneous/find-almost-anybodys-email-address/) + [NameToEmail](https://github.com/TransparencyToolkit/NameToEmail).
